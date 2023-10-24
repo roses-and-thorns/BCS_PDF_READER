@@ -1,32 +1,42 @@
-# BCS_PDF_READER
+## BCS_PDF_READER
 A language processing pipeline for retrieval-based question answering using the Langchain library.
 
 ## Table of Contents
 
 - [Overview](#overview)
+- [Features](#features)
+- [How to use the gradio interface](#howtousethegradiointerface)
 - [Prerequisites](#prerequisites)
-- [License](#license)
 
 ## Overview
 
 This repository contains a Python script for building a retrieval-based question-answering system using the Langchain library. It offers a comprehensive language processing pipeline designed to help you answer questions based on textual data stored in PDF documents. The pipeline includes the following key components:
 
-- **Document Loading**: It leverages the PyPDFLoader to extract text content from PDF documents.
+1. **PDF Document Loader**: This model utilizes the `OnlinePDFLoader` from Langchain to load and extract text content from PDF documents. It prepares the PDF content for further processing.
 
-- **Text Splitting**: The RecursiveCharacterTextSplitter is used to split large text content into manageable chunks, ensuring efficient processing.
+2. **Text Splitter**: The `RecursiveCharacterTextSplitter` is responsible for splitting large text content into manageable chunks, ensuring efficient and accurate text processing. It uses various separators to intelligently segment the text.
 
-- **Embeddings**: The HuggingFaceEmbeddings module is employed to compute embeddings for the text data. These embeddings capture the semantic information of the text, which is crucial for retrieval-based question answering.
+3. **Embeddings Model**: The chatbot employs the `HuggingFaceHubEmbeddings` model to compute embeddings for text data. These embeddings capture the semantic information of the text, which is vital for retrieval-based question answering.
 
-- **Vector Stores**: FAISS (Facebook AI Similarity Search) is utilized to store and efficiently retrieve embeddings. FAISS provides fast, approximate similarity search capabilities, which are essential for quickly finding relevant documents.
+4. **Vector Stores**: To store and efficiently retrieve embeddings, the chatbot utilizes `FAISS`, which is a high-performance similarity search library from Facebook AI. It offers fast, approximate similarity search capabilities, enabling quick retrieval of relevant documents.
 
-- **Question Answering (QA)**: The pipeline incorporates a RetrievalQA component that allows users to ask questions based on the embeddings of the text data. It retrieves and ranks documents that contain relevant information to answer the user's query.
+5. **Question Answering (QA)**: The pipeline incorporates a RetrievalQA component that allows users to ask questions based on the embeddings of the text data. It retrieves and ranks documents that contain relevant information to answer the user's query.
 
 The primary use case for this pipeline is to process PDF documents, generate embeddings, and enable users to ask questions about the document content. Whether you're conducting research, analyzing reports, or searching for information in a large document collection, this system can assist in extracting meaningful answers efficiently.
 
+## Features
+- Interact with PDF documents using a user-friendly interface.
+- Ask questions and receive answers from PDF content.
+- Load PDF documents or select from pre-loaded books.
 
+## How to use the gradio interface
+- In the Gradio interface, you can load a PDF document or choose from pre-loaded books. 
+- Type your questions in the chat window and hit Enter.
+- The chatbot will provide answers based on the content of the PDF document.
+  
 ## Prerequisites
 
-Before you can use this, ensure you have the following dependencies installed:
+If you wish to use this chatbot on your own machine, ensure you have the following dependencies installed:
 
 - Python 3.7+
 - Pip
@@ -37,6 +47,3 @@ Before you can use this, ensure you have the following dependencies installed:
   - Faiss-CPU
   - NumPy
   - Pandas
-
- ## License
- 
