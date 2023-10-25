@@ -1,0 +1,8 @@
+huggingface_hub
+pypdf
+langchain
+torchvision
+sentence-transformers
+faiss-cpu
+unstructured
+unstructured[local-inference]
