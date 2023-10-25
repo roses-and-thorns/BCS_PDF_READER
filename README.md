@@ -18,7 +18,7 @@ This repository contains a Python script for building a retrieval-based question
 
 2. **Text Splitter**: The `RecursiveCharacterTextSplitter` is responsible for splitting large text content into manageable chunks, ensuring efficient and accurate text processing. It uses various separators to intelligently segment the text.
 
-3. **Embeddings Model**: The chatbot employs the `HuggingFaceHubEmbeddings` model to compute embeddings for text data. These embeddings capture the semantic information of the text, which is vital for retrieval-based question answering.
+3. **Embeddings**: The chatbot employs the `HuggingFaceHubEmbeddings` package to compute embeddings for text data. These embeddings capture the semantic information of the text, which is vital for retrieval-based question answering.
 
 4. **Vector Stores**: To store and efficiently retrieve embeddings, the chatbot utilizes `FAISS`, which is a high-performance similarity search library from Facebook AI. It offers fast, approximate similarity search capabilities, enabling quick retrieval of relevant documents.
 
@@ -40,8 +40,8 @@ The primary use case for this pipeline is to process PDF documents, generate emb
 
 If you wish to use this chatbot on your own machine, ensure you have the following dependencies installed:
 
-- Python 3.7+
-- Pip
+- Python 3.8+
+- pip
 - Required Python packages (install them using `pip`):
   - Langchain
   - PyPDF
